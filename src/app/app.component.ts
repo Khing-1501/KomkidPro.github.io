@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingStateService } from './services/loading-state.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  // loading$ = this.loadingStateService._loading$.value
+  loading$ = false
+
+  constructor(
+    private loadingStateService:LoadingStateService
+  ){}
+  
   title = 'KomkidPro.github.io';
 }
